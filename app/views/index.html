@@ -7,14 +7,103 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <h1 class="govuk-heading-xl">Saved courses</h1>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    <p class="govuk-body">
+      Sort by:
+      <strong>Most recently saved</strong> <span class="govuk-hint">&nbsp;|&nbsp;</span>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Distance</a> <span class="govuk-hint">&nbsp;|&nbsp;</span>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Lowest fee</a>
+    </p>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
-</div>
+    <div class="govuk-summary-card govuk-summary-list--no-border">
+      <div class="govuk-summary-card__title-wrapper">
+        <p class="govuk-body">
+          <strong class="govuk-tag govuk-tag--red">
+            Not accepting applications
+          </strong>
+        </p>
+        <h2 class="govuk-summary-card__title">
+          <a class="govuk-link govuk-!-font-size-24" href="#"><span class="app-search-result__provider-name">University of Manchester</span><span class="app-search-result__course-name">Mathematics (G1X1)</span></a>
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Remove course</a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nearest placement school
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong>2 miles</strong> from <strong>Manchester</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Fee or salary
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong>£9,535</strong> fee for UK citizens<br>
+            <span class="govuk-hint govuk-!-font-size-16">
+              Bursaries of £29,000 are available
+            </span>
+            </dd>
+          </div>
+           <div class="govuk-summary-list__row">
+            <hr class="govuk-section-break govuk-section-break--visible">
+            <dt class="govuk-summary-list__key">
+              <hr class="govuk-section-break govuk-section-break--visible">
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <hr class="govuk-section-break govuk-section-break--visible">
+            </dd>
+          </div>
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Note
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Add a note</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <nav class="govuk-pagination" aria-label="Pagination">
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+            2
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+    <!-- END PAGINATION -->
 
 {% endblock %}
