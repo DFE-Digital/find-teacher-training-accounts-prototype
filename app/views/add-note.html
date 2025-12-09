@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--xl" for="more-detail">
+      Add a note to University of Manchester - Mathematics (G1X1)
+    </label>
+  </h1>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+<a href="saved-courses" type="submit" class="govuk-button" data-module="govuk-button">
+  Add note
+</a>
+
+<p class="govuk-body">
+ <a class="govuk-link" href="#">Cancel</a>
+</p>
+
+{% endblock %}
