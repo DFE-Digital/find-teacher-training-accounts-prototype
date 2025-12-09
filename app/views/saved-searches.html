@@ -7,18 +7,17 @@
 
     <h1 class="govuk-heading-xl">Saved searches</h1>
 
-    <p class="govuk-body">
-      We'll email you about these searches every Monday.
-    </p>
-
     <div class="govuk-summary-card govuk-summary-list--no-border">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Mathematics in Manchester
+          <a class="govuk-link" href="#">Mathematics in Manchester</a>
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
+            <a class="govuk-link" href="email-alerts">Get email alerts for this search</a>
+          </li>
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">Delete saved search</a>
           </li>
         </ul>
       </div>
@@ -62,8 +61,5 @@
         </dl>
       </div>
     </div>
-
-    <h2 class="govuk-heading-m">Create a new search alert</h2>
-    <p class="govuk-body">To create a new search alert, <a class="govuk-link govuk-link--no-visited-state" href="#">search for a course</a> and then select <strong>Create a search alert</strong> in the <strong>Filters</strong>.
 
 {% endblock %}
