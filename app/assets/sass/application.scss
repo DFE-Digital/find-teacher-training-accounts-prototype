@@ -746,3 +746,53 @@ body.app-filter-panel--locked {
     display: block;
     text-decoration: underline;
 }
+
+.app-summary-card__title--saved-course {
+  font-size: 19px;
+    @include govuk-media-query($from: tablet) {
+    font-size: 16px;
+  }
+}
+
+.app-summary-list--saved-course {
+    font-size: 19px;
+  @include govuk-media-query($from: tablet) {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+.app-summary-list__row--saved-course {
+ display: block;
+ margin-bottom: 15px;
+}
+
+.app-summary-list__key--saved-course {
+ display: block;
+ width: 100%;
+ padding: 0;
+}
+
+.app-summary-list__value--saved-course {
+ display: block;
+ padding: 0;
+ margin-bottom: 15px;
+}
+
+.app-link--saved-course {
+    font-size: 19px;
+    @include govuk-media-query($from: tablet) {
+    font-size: 16px;
+  }
+}
+
+.app-details--saved-course {
+  font-size: 19px;
+    @include govuk-media-query($from: tablet) {
+    font-size: 16px;
+  }
+}
+
+.app-details--saved-course {
+  margin-bottom: 15px;
+}
