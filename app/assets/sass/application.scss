@@ -796,3 +796,88 @@ body.app-filter-panel--locked {
 .app-details--saved-course {
   margin-bottom: 15px;
 }
+
+.app-related {
+  padding-top: 15px;
+  border-top: 2px solid #1d70b8;
+}
+
+.moj-sub-navigation {
+    margin-bottom: 40px;
+}
+
+.moj-sub-navigation__list {
+    font-size: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include govuk-media-query($from: tablet) {
+      box-shadow: inset 0 -1px 0 #b1b4b6;
+      width: 100%;
+  }
+}
+
+.moj-sub-navigation__item {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    box-shadow: inset 0 -1px 0 #b1b4b6;
+    display: block;
+    font-family: GDS Transport, arial, sans-serif;
+    margin-top: -1px;
+    -webkit-font-smoothing: antialiased;
+    @include govuk-media-query($from: tablet) {
+      box-shadow: none;
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 0;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737;
+    }
+}
+
+.moj-sub-navigation__link {
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+  @include govuk-media-query($from: tablet) {
+    padding-left: 0;
+  }
+}
+
+.moj-sub-navigation__link:link, .moj-sub-navigation__link:visited {
+    color: #1d70b8;
+}
+
+.moj-sub-navigation__link:active, .moj-sub-navigation__link:hover, .moj-sub-navigation__link:link, .moj-sub-navigation__link:visited {
+    text-decoration: none;
+}
+
+.moj-sub-navigation__link:link {
+    color: #1d70b8;
+}
+
+.moj-sub-navigation__link {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em;
+}
+
+.moj-sub-navigation__link {
+    display: block;
+    font-family: GDS Transport, arial, sans-serif;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-top: 12px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-email-alerts-link {
+    padding-bottom: 20px;
+   @include govuk-media-query($from: tablet) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

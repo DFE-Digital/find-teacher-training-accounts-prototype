@@ -5,9 +5,23 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Saved courses</h1>
+    <h1 class="govuk-heading-xl">My courses</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="#1">Saved courses</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="#2">Email alerts</a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <h2 class="govuk-heading-l">Saved courses</h2>
 
     <p class="govuk-body">
       Sort by:
@@ -17,43 +31,22 @@
     </p>
 
     <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          <a class="govuk-link govuk-!-font-size-24" href="#"><span class="app-search-result__provider-name">University of Manchester</span><span class="app-search-result__course-name">Mathematics (G1X1)</span></a>
-        </h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
-          </li>
-        </ul>
+      {% include "_includes/saved-course-3.html" %}
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="add-note">Add a note</a></p>
+            </dd>
+          </div>
+        </dl>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Nearest placement school
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <strong>2 miles</strong> from <strong>Manchester</strong>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Fee or salary
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <strong>£9,535</strong> fee for UK citizens<br>
-            <span class="govuk-hint govuk-!-font-size-16">
-              Bursaries of £29,000 are available
-            </span>
-            </dd>
-          </div>
-           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Note
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="add-note">Add a note</p>
+    </div>
+
+    <div class="govuk-summary-card">
+      {% include "_includes/saved-course-3.html" %}
+      <dd class="govuk-summary-list__value">
+      <p class="govuk-body">
+      <p class="govuk-body">I’m expecting this ITT to be more hands-on than others.</p>
+      <p class="govuk-body">It looks like mentoring starts early, with clear support and quicker classroom experience.</p>
+      <p class="govuk-body">Other courses seem heavier on theory, but this one promises a better balance of practice and reflection to build confidence fast.</p>
             </dd>
           </div>
         </dl>
@@ -64,23 +57,23 @@
     <nav class="govuk-pagination" aria-label="Pagination">
       <ul class="govuk-pagination__list">
         <li class="govuk-pagination__item govuk-pagination__item--current">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1" aria-current="page">
             1
           </a>
         </li>
         <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2">
             2
           </a>
         </li>
         <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
             3
           </a>
         </li>
       </ul>
       <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next">
           <span class="govuk-pagination__link-title">
             Next<span class="govuk-visually-hidden"> page</span>
           </span>
@@ -91,5 +84,13 @@
       </div>
     </nav>
     <!-- END PAGINATION -->
+
+        <div class="govuk-body app-guidance-panel">
+            <h2 class="govuk-heading-m">Applications</h2>
+            <p class="govuk-body">You can view and manage your applications on the <a class="govuk-link" href="https://www.gov.uk/apply-for-teacher-training">Apply for teacher training website</a>.</p>
+            <p class="govuk-body">If you have not yet started applying for courses, you should <a class="govuk-link" href="index">find a course</a> first.</p>
+      </div>
+
+  </div>
 
 {% endblock %}
