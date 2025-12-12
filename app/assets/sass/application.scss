@@ -806,6 +806,12 @@ body.app-filter-panel--locked {
     margin-bottom: 40px;
 }
 
+.moj-sub-navigation__link[aria-current=page] {
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+}
+
 .moj-sub-navigation__list {
     font-size: 0;
     list-style: none;
@@ -880,4 +886,28 @@ body.app-filter-panel--locked {
     margin-bottom: 0;
     padding-bottom: 0;
   }
+}
+
+.app-card--dashed {
+    padding: 30px !important;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: rgb(177, 180, 182);
+    border-image: initial;
+}
+
+.app-card {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    position: relative;
+    display: block;
+    background-color: rgb(243, 242, 241);
+    padding: 15px;
+}
+
+.app-card > :last-child {
+    margin-bottom: 0px;
 }

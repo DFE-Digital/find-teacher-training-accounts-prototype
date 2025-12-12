@@ -1,96 +1,23 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">My courses</h1>
-
-    <nav class="moj-sub-navigation" aria-label="Sub navigation">
-      <ul class="moj-sub-navigation__list">
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" aria-current="page" href="saved-courses">Saved courses</a>
-        </li>
-        <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="saved-searches">Email alerts</a>
-        </li>
-      </ul>
-    </nav>
-
+    {% include "_includes/my-courses/sub-nav.html" %}
 
     <h2 class="govuk-heading-l">Saved courses</h2>
 
-    <p class="govuk-body">
-      Sort by:
-      <strong>Most recently saved</strong> <span class="govuk-hint">&nbsp;|&nbsp;</span>
-      <a class="govuk-link govuk-link--no-visited-state" href="#">Distance</a> <span class="govuk-hint">&nbsp;|&nbsp;</span>
-      <a class="govuk-link govuk-link--no-visited-state" href="#">Lowest fee</a>
-    </p>
+    {% include "_includes/my-courses/saved-courses/sort.html" %}
 
-    <div class="govuk-summary-card">
-      {% include "_includes/saved-course-3.html" %}
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="add-note">Add a note</a></p>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+    {% include "_includes/my-courses/saved-courses/courses.html" %}
 
-    <div class="govuk-summary-card">
-      {% include "_includes/saved-course-3.html" %}
-      <dd class="govuk-summary-list__value">
-      <p class="govuk-body">
-      <p class="govuk-body">I’m expecting this ITT to be more hands-on than others.</p>
-      <p class="govuk-body">It looks like mentoring starts early, with clear support and quicker classroom experience.</p>
-      <p class="govuk-body">Other courses seem heavier on theory, but this one promises a better balance of practice and reflection to build confidence fast.</p>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+    {% include "_includes/pagination.html" %}
 
-    <!-- PAGINATION -->
-    <nav class="govuk-pagination" aria-label="Pagination">
-      <ul class="govuk-pagination__list">
-        <li class="govuk-pagination__item govuk-pagination__item--current">
-          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1" aria-current="page">
-            1
-          </a>
-        </li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2">
-            2
-          </a>
-        </li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-            3
-          </a>
-        </li>
-      </ul>
-      <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next">
-          <span class="govuk-pagination__link-title">
-            Next<span class="govuk-visually-hidden"> page</span>
-          </span>
-          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-          </svg>
-        </a>
-      </div>
-    </nav>
-    <!-- END PAGINATION -->
-
-        <div class="govuk-body app-guidance-panel">
-            <h2 class="govuk-heading-m">Applications</h2>
-            <p class="govuk-body">You can view and manage your applications on the <a class="govuk-link" href="https://www.gov.uk/apply-for-teacher-training">Apply for teacher training website</a>.</p>
-            <p class="govuk-body">If you have not yet started applying for courses, you should <a class="govuk-link" href="index">find a course</a> first.</p>
-      </div>
+    {% include "_includes/my-courses/apply-callout.html" %}
 
   </div>
+</div>
 
 {% endblock %}

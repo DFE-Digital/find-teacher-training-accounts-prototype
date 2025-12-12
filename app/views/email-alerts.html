@@ -3,76 +3,12 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">Get email alerts for Mathematics in Manchester</h1>
+    {% include "_includes/my-courses/sub-nav.html" %}
 
-    <p class="govuk-body">
-      Get an email alert whenever a new course is added to this search:
-    </p>
+    <h2 class="govuk-heading-l">Email alerts</h2>
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Subject
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Mathematics
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Fee or salary
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Fee-paying courses
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          City, town or postcode
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Manchester
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Full time or part time
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Full time
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Qualification
-        </dt>
-        <dd class="govuk-summary-list__value">
-          QTS with PGCE or PGDE
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Start date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          October 2026 to July 2027
-        </dd>
-      </div>
-    </dl>
-
-    <p class="govuk-body">
-      We will send you emails about new courses every Monday at 3pm.<br><br>
-      You can unsubscribe at any time.
-    </p>
-
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Set up email alert
-</button>
-
-<p class="govuk-body">
- <a class="govuk-link" href="#">Cancel</a>
-</p>
+    {% include "_includes/my-courses/email-alerts/alerts.html" %}
 
 {% endblock %}
