@@ -3,24 +3,32 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Saved searches</h1>
+       <h1 class="govuk-heading-xl">My courses</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="saved-courses">Saved courses</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="saved searches">Email alerts</a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <h2 class="govuk-heading-l">Email alerts</h2>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Mathematics in Manchester
+          <a class="govuk-link govuk-link--no-visited-state" href="index">Mathematics in Manchester</a>
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="email-alerts">Search again</a>
-          </li>
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="email-alerts">Get email alerts</a>
-          </li>
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Delete</a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
           </li>
         </ul>
       </div>
@@ -43,22 +51,122 @@
             </span>
             </dd>
           </div>
-           <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Fee or salary
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Fee-paying courses
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Full time or part time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Full time
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Qualification
+              </dt>
+              <dd class="govuk-summary-list__value">
+                QTS with PGCE or PGDE
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                October 2026 to July 2027
+              </dd>
+            </div>
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Sort by
+              Email alerts
             </dt>
             <dd class="govuk-summary-list__value">
-              Lowest fee
+              <a class="govuk-link govuk-link--no-visited-state" href="email-alerts">Create an email alert</a>
             </span>
             </dd>
           </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          <a class="govuk-link govuk-link--no-visited-state" href="index">Mathematics in PR5 4JB</a>
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
            <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Special educational needs (SEND)
+              Subject
             </dt>
             <dd class="govuk-summary-list__value">
-              Only show courses with a SEND specialism
+              Mathematics
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              City, town or postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Manchester
+            </dd>
+          </div>
+           <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Fee or salary
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Fee-paying courses
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Full time or part time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Full time
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Qualification
+              </dt>
+              <dd class="govuk-summary-list__value">
+                QTS with PGCE or PGDE
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                October 2026 to July 2027
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email alerts
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
             </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
             </dd>
           </div>
         </dl>
