@@ -1,2 +1,7 @@
-    {% include "_includes/my-courses/saved-courses/course.html" %}
-    {% include "_includes/my-courses/saved-courses/course.html" %}
+    {% if data.savedCourses and data.savedCourses.length %}
+      {% for course in data.savedCourses %}
+        {% include "_includes/my-courses/saved-courses/course.html" %}
+      {% endfor %}
+    {% else %}
+      {% include "_includes/my-courses/saved-courses/course.html" %}
+    {% endif %}
