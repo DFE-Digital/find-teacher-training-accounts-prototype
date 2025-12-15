@@ -812,6 +812,16 @@ body.app-filter-panel--locked {
     text-decoration: none;
 }
 
+.moj-sub-navigation__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #1d70b8;
+}
+
 .moj-sub-navigation__list {
     font-size: 0;
     list-style: none;
@@ -867,6 +877,15 @@ body.app-filter-panel--locked {
     text-decoration: underline;
     text-decoration-thickness: max(1px, .0625rem);
     text-underline-offset: .1578em;
+}
+
+.moj-sub-navigation__link[aria-current="page"],
+.moj-sub-navigation__link[aria-current="page"]:link,
+.moj-sub-navigation__link[aria-current="page"]:visited,
+.moj-sub-navigation__link[aria-current="page"]:hover,
+.moj-sub-navigation__link[aria-current="page"]:active {
+  color: #0b0c0c;
+  text-decoration: none;
 }
 
 .moj-sub-navigation__link {

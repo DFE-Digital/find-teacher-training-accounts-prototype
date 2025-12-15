@@ -54,14 +54,22 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item">
+          <li class="govuk-service-navigation__item{% if activePrimaryNav == 'find' %} govuk-service-navigation__item--active{% endif %}">
             <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="index">
+              {% if activePrimaryNav == 'find' %}
+              <strong class="govuk-service-navigation__active-fallback">Find courses</strong>
+              {% else %}
               Find courses
+              {% endif %}
             </a>
           </li>
-          <li class="govuk-service-navigation__item">
-            <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="saved-courses" aria-current="true">
+          <li class="govuk-service-navigation__item{% if activePrimaryNav == 'my' %} govuk-service-navigation__item--active{% endif %}">
+            <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="saved-courses">
+              {% if activePrimaryNav == 'my' %}
+              <strong class="govuk-service-navigation__active-fallback">My courses</strong>
+              {% else %}
               My courses
+              {% endif %}
             </a>
           </li>
         </ul>
