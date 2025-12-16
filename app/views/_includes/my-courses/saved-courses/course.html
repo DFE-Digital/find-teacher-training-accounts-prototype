@@ -50,7 +50,16 @@
         <dt class="govuk-summary-list__key">
           Note
         </dt>
-        {% include "_includes/my-courses/saved-courses/note-empty.html" %}
+        {% if course.id is defined %}
+          {% set courseId = course.id %}
+        {% else %}
+          {% set courseId = courseIndex %}
+        {% endif %}
+        {% if course.note %}
+          {% include "_includes/my-courses/saved-courses/note-full.html" %}
+        {% else %}
+          {% include "_includes/my-courses/saved-courses/note-empty.html" %}
+        {% endif %}
       </div>
     </dl>
   </div>

@@ -1,9 +1,6 @@
 <dd class="govuk-summary-list__value">
-<p class="govuk-body">
-<p class="govuk-body">I’m expecting this ITT to be more hands-on than others.</p>
-<p class="govuk-body">It looks like mentoring starts early, with clear support and quicker classroom experience.</p>
-<p class="govuk-body">Other courses seem heavier on theory, but this one promises a better balance of practice and reflection to build confidence fast.</p>
+  <p class="govuk-body">{{ course.note | nl2br | safe }}</p>
 </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    <a class="govuk-link" href="add-note?id={{ courseId }}&index={{ courseIndex }}">Change<span class="govuk-visually-hidden"> note</span></a>
 </dd>

@@ -5,21 +5,66 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--xl" for="more-detail">
-      Add a note to University of Manchester - Mathematics (G1X1)
-    </label>
-  </h1>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
+    <form action="/add-note" method="post" novalidate>
+      {# In Prototype Kit, query params often get persisted onto `data` (session). Prefer `data.*` with `query.*` fallback. #}
+      {% set saved = data.savedCourses or [] %}
+      {% set idx = 0 %}
+      {% if data.index is defined and (data.index | string) != '' %}
+        {% set idx = data.index | int %}
+      {% elif query.index is defined and (query.index | string) != '' %}
+        {% set idx = query.index | int %}
+      {% elif data.i is defined and (data.i | string) != '' %}
+        {% set idx = data.i | int %}
+      {% elif query.i is defined and (query.i | string) != '' %}
+        {% set idx = query.i | int %}
+      {% endif %}
 
-<a href="saved-courses" type="submit" class="govuk-button" data-module="govuk-button">
-  Add note
-</a>
+      {% if data.id is defined and (data.id | string) != '' %}
+        {% set targetId = data.id | int %}
+      {% elif query.id is defined and (query.id | string) != '' %}
+        {% set targetId = query.id | int %}
+      {% endif %}
 
-<p class="govuk-body">
- <a class="govuk-link" href="#">Cancel</a>
-</p>
+      {# Resolve course by id (preferred) and also derive its index #}
+      {% set c = null %}
+      {% if targetId is defined and saved %}
+        {% for sc in saved %}
+          {% if sc.id is defined and sc.id == targetId %}
+            {% set c = sc %}
+            {% set idx = loop.index0 %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {# Fallback to index if id lookup fails #}
+      {% if not c and saved and saved[idx] %}
+        {% set c = saved[idx] %}
+      {% endif %}
+
+      {# Final id to post #}
+      {% if c and c.id is defined %}
+        {% set finalId = c.id %}
+      {% elif targetId is defined %}
+        {% set finalId = targetId %}
+      {% else %}
+        {% set finalId = idx %}
+      {% endif %}
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="note-text">
+            Add a note{% if c %} to {{ c.provider }} - {{ c.title }}{% endif %}
+          </label>
+        </h1>
+        <textarea class="govuk-textarea" id="note-text" name="noteText" rows="5" aria-describedby="note-text-hint">{{ c and c.note }}</textarea>
+      </div>
+      <input type="hidden" name="courseId" value="{{ finalId }}">
+      <input type="hidden" name="courseIndex" value="{{ idx }}">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Add note
+      </button>
+      <p class="govuk-body">
+        <a class="govuk-link" href="saved-courses">Cancel</a>
+      </p>
+    </form>
 
 {% endblock %}

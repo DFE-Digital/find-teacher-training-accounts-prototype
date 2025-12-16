@@ -28,3 +28,9 @@ addFilter('boldFeeWord', (value) => {
   if (typeof value !== 'string') return value
   return value.replace(/\b(fee)\b/gi, '<strong>$1</strong>')
 })
+
+// Convert newlines to <br> for simple multiline notes rendering
+addFilter('nl2br', (value) => {
+  if (typeof value !== 'string') return value
+  return value.replace(/\r?\n/g, '<br>')
+})
