@@ -1,2 +1,8 @@
-    {% include "_includes/my-courses/email-alerts/alert.html" %}
-    {% include "_includes/my-courses/email-alerts/alert.html" %}
+    {% if data.emailAlerts and data.emailAlerts.length %}
+      {% for alert in data.emailAlerts %}
+        {% set alertIndex = loop.index0 %}
+        {% include "_includes/my-courses/email-alerts/alert.html" %}
+      {% endfor %}
+    {% else %}
+      {% include "_includes/my-courses/email-alerts/alerts-none.html" %}
+    {% endif %}

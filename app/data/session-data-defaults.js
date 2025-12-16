@@ -37,5 +37,41 @@ module.exports = {
       feeExtraText: "fee for Non-UK citizens",
       funding: "Scholarships of £31,000 or bursaries of £29,000 are available"
     }
+  ],
+
+  emailAlerts: [
+    {
+      id: 0,
+      title: "Mathematics in Manchester",
+      criteria: [
+        { key: "Subject", value: "Mathematics" },
+        { key: "Location", value: "Within 50 miles of Manchester" },
+        { key: "Fee or salary", value: "Fee-paying" },
+        { key: "Full time or part time", value: "Full time" },
+        { key: "Qualification", value: "QTS with PGCE or PGDE" },
+        { key: "Start date", value: "October 2026 to July 2027" }
+      ]
+    },
+    {
+      id: 1,
+      title: "Physics and Mathematics in M60 2LA",
+      criteria: [
+        { key: "Subject", value: "Physics and Mathematics" },
+        { key: "Location", value: "Within 100 miles of M60 2LA" },
+        { key: "Fee or salary", value: "Salary" },
+        { key: "Visa sponsorship", value: "Only courses that offer visa sponsorship" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Primary with mathematics",
+      criteria: [
+        { key: "Subject", value: "Primary with mathematics" },
+        { key: "Fee or salary", value: "Fee-paying courses" },
+        { key: "Full time or part time", value: "Part time" },
+        { key: "Qualification", value: "QTS only" },
+        { key: "Start date", value: "September 2026 only" }
+      ]
+    }
   ]
 }
