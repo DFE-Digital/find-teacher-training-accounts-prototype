@@ -20,7 +20,11 @@
           Nearest placement school
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ course.distance }}
+          {% if course.distanceValue or course.distancePlace %}
+          <strong>{{ course.distanceValue }}</strong> from <strong>{{ course.distancePlace }}</strong>
+          {% else %}
+          {{ course.distance | boldDistance | safe }}
+          {% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -29,10 +33,10 @@
         </dt>
         <dd class="govuk-summary-list__value">
           {% if course.feeAmount or course.feeText or course.fee %}
-           {% if course.feeAmount %}{{ course.feeAmount }}{% endif %}{% if course.feeText %} {{ course.feeText }}{% endif %}{% if not course.feeAmount and not course.feeText and course.fee %}{{ course.fee | boldCurrency | safe }}{% endif %}
+           {% if course.feeAmount %}<strong>{{ course.feeAmount }}</strong>{% endif %}{% if course.feeText %} {{ course.feeText | boldFeeWord | safe }}{% endif %}{% if not course.feeAmount and not course.feeText and course.fee %}{{ course.fee | boldCurrency | boldFeeWord | safe }}{% endif %}
 
           {% if course.feeExtraAmount or course.feeExtraText or course.feeExtra %}<br>{% endif %}
-           {% if course.feeExtraAmount %}{{ course.feeExtraAmount }}{% endif %}{% if course.feeExtraText %} {{ course.feeExtraText }}{% endif %}{% if not course.feeExtraAmount and not course.feeExtraText and course.feeExtra %}{{ course.feeExtra | boldCurrency | safe }}{% endif %}
+           {% if course.feeExtraAmount %}<strong>{{ course.feeExtraAmount }}</strong>{% endif %}{% if course.feeExtraText %} {{ course.feeExtraText | boldFeeWord | safe }}{% endif %}{% if not course.feeExtraAmount and not course.feeExtraText and course.feeExtra %}{{ course.feeExtra | boldCurrency | boldFeeWord | safe }}{% endif %}
           {% endif %}
         {% if course.funding %}
         <br>
