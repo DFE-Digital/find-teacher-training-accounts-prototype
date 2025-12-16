@@ -822,6 +822,16 @@ body.app-filter-panel--locked {
   background-color: #1d70b8;
 }
 
+.moj-sub-navigation__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #1d70b8;
+}
+
 .moj-sub-navigation__list {
     font-size: 0;
     list-style: none;
@@ -858,6 +868,25 @@ body.app-filter-panel--locked {
     text-decoration: none;
   @include govuk-media-query($from: tablet) {
     padding-left: 0;
+  }
+}
+
+/* Mobile tweaks: show left active bar (MOJ example) and remove bottom underline */
+@include govuk-media-query($until: tablet) {
+  .moj-sub-navigation__link[aria-current="page"]::after {
+    display: none;
+  }
+  .moj-sub-navigation__link[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background-color: #1d70b8;
+  }
+  .moj-sub-navigation__link {
+    padding-left: 21px; /* space for left active bar */
   }
 }
 
