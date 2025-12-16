@@ -670,9 +670,23 @@ body.app-filter-panel--locked {
 }
 
 // Subject autocomplete visual tweaks
+.autocomplete__wrapper,
 .autocomplete__input,
+.autocomplete__menu,
+.autocomplete__option {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 19px;
+  color: #0b0c0c;
+}
+
+.autocomplete__input {
+  background-color: #ffffff !important;
+}
+
 .autocomplete__menu {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 }
 
 .search-only-mobile-panel {

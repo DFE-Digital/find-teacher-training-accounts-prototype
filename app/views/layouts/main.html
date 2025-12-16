@@ -6,6 +6,11 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://unpkg.com/accessible-autocomplete@3.0.1/dist/accessible-autocomplete.min.css">
+{% endblock %}
+
 {% block header %}
 
 <header class="govuk-header" data-module="govuk-header">
@@ -91,4 +96,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </div>
 </div>
 
+{% endblock %}
+
+{% block bodyEnd %}
+  {{ super() }}
+  <script src="https://unpkg.com/accessible-autocomplete@3.0.1/dist/accessible-autocomplete.min.js"></script>
 {% endblock %}

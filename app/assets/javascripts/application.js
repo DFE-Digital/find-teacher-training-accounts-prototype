@@ -4,6 +4,21 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
+  try {
+    const subjectSelect = document.getElementById('search-by-subject')
+    if (subjectSelect && subjectSelect.tagName === 'SELECT' && window.accessibleAutocomplete && typeof window.accessibleAutocomplete.enhanceSelectElement === 'function') {
+      window.accessibleAutocomplete.enhanceSelectElement({
+        selectElement: subjectSelect,
+        defaultValue: '',
+        showAllValues: false,
+        autoselect: true,
+        minLength: 3,
+        displayMenu: 'overlay'
+      })
+    }
+  } catch (e) {
+    // fail silently in prototype
+  }
   const filterPanel = document.querySelector('[data-filter-panel]')
   const filterToggle = document.querySelector('[data-filter-toggle]')
   const filterBackdrop = document.querySelector('[data-filter-backdrop]')
