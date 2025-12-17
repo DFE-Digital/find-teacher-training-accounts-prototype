@@ -58,9 +58,7 @@ module.exports = {
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "Within 100 miles of M60 2LA" },
-        { key: "Fee or salary", value: "Salary" },
-        { key: "Visa sponsorship", value: "Only courses that offer visa sponsorship" }
-      ]
+        { key: "Fee or salary", value: "Salary" }      ]
     },
     {
       id: 2,
