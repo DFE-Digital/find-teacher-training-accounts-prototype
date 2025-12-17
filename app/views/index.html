@@ -1,28 +1,194 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 {% set pageName="Home" %}
-{% set activePrimaryNav = 'find' %}
 {% block content %}
 
-{% include "_includes/search-results/git-link.html" %}
-
-<h1 class="govuk-heading-l app-page-title" data-results-heading>10,416 courses found</h1>
-<div class="app-search-top-row" data-search-top-row hidden>
-  <div class="app-search-top-row__inner" data-search-target>
-</div>
-</div>
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third app-search-and-filter" style="margin-bottom:20px;" data-search-panel-wrapper>
-    {% include "_includes/search-results/search-and-filter.html" %}
-  </div>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Find teacher training courses in England</h1>
 
-  <div class="govuk-grid-column-two-thirds">
-    <div data-courses-container>
-      {% include "_includes/search-results/courses.html" %}
-      {% include "_includes/pagination.html" %}
+    <div class="app-home-search-panel">
+      <form action="find-courses" method="get" novalidate>
+        <div class="govuk-grid-row app-home-search-panel__row">
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m govuk-!-font-weight-bold" for="search-by-subject">
+                Subject
+              </label>
+              <select class="govuk-select" id="search-by-subject" name="subject">
+                <option value="" selected>Select a subject</option>
+                <option value="Ancient Greek">Ancient Greek</option>
+                <option value="Ancient Hebrew">Ancient Hebrew</option>
+                <option value="Art and design">Art and design</option>
+                <option value="Biology">Biology</option>
+                <option value="Business studies">Business studies</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Citizenship">Citizenship</option>
+                <option value="Classics">Classics</option>
+                <option value="Communication and media studies">Communication and media studies</option>
+                <option value="Computing">Computing</option>
+                <option value="Dance">Dance</option>
+                <option value="Design and technology">Design and technology</option>
+                <option value="Drama">Drama</option>
+                <option value="Economics">Economics</option>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="Further education">Further education</option>
+                <option value="Geography">Geography</option>
+                <option value="German">German</option>
+                <option value="Health and social care">Health and social care</option>
+                <option value="History">History</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Latin">Latin</option>
+                <option value="Mandarin">Mandarin</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Modern languages (other)">Modern languages (other)</option>
+                <option value="Music">Music</option>
+                <option value="Philosophy">Philosophy</option>
+                <option value="Physical education">Physical education</option>
+                <option value="Physical education with an EBacc subject">Physical education with an EBacc subject</option>
+                <option value="Physics">Physics</option>
+                <option value="Primary">Primary</option>
+                <option value="Primary with English">Primary with English</option>
+                <option value="Primary with geography and history">Primary with geography and history</option>
+                <option value="Primary with mathematics">Primary with mathematics</option>
+                <option value="Primary with modern languages">Primary with modern languages</option>
+                <option value="Primary with physical education">Primary with physical education</option>
+                <option value="Primary with science">Primary with science</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Religious education">Religious education</option>
+                <option value="Russian">Russian</option>
+                <option value="Science">Science</option>
+                <option value="Social sciences">Social sciences</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m govuk-!-font-weight-bold" for="search-by-location">
+                City, town or postcode
+              </label>
+              <div class="app-home-search-panel__location-row">
+                <input class="govuk-input app-home-search-panel__location-input" id="search-by-location" name="location" type="text" autocomplete="postal-code">
+                <button class="govuk-button app-home-search-panel__search-button" data-module="govuk-button" type="submit">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-5">
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="visa-sponsorship" name="visa-sponsorship" type="checkbox" value="true">
+              <label class="govuk-label govuk-checkboxes__label" for="visa-sponsorship">
+                Only show courses that offer visa sponsorship
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <details class="govuk-details govuk-!-margin-bottom-0">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">Search by training provider</span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-label--m govuk-!-font-weight-bold" for="training-provider">
+                Enter a provider name
+              </label>
+              <input class="govuk-input" id="training-provider" name="training-provider" type="text" autocomplete="off">
+            </div>
+          </div>
+        </details>
+      </form>
     </div>
   </div>
+</div>
 
+<br>
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="app-stage-panel">
+      <h2 class="govuk-heading-m">Primary (ages 3 to 11)</h2>
+      <p class="govuk-body"><a class="govuk-link" href="#">Browse primary courses</a></p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="app-stage-panel">
+      <h2 class="govuk-heading-m">Secondary (ages 11 to 18)</h2>
+      <p class="govuk-body"><a class="govuk-link" href="#">Browse secondary courses</a></p>
+    </div>
+  </div>
+</div>
+
+{{ govukAccordion({
+  id: "home-guidance",
+  items: [
+    {
+      heading: { text: "Apprenticeships" },
+      content: {
+        html: '
+          <p class="govuk-body">You can train to teach on an undergraduate or postgraduate apprenticeship.</p>
+          <p class="govuk-body">If you have a degree or are studying for one you may be eligible for a <a class="govuk-link" href="#">postgraduate teaching apprenticeship (PGTA)</a>.</p>
+          <p class="govuk-body">If you do not have a degree and are not studying for one you may be eligible for a <a class="govuk-link" href="#">teacher degree apprenticeship (TDA)</a>.</p>
+          <p class="govuk-body"><a class="govuk-link" href="#">Browse all apprenticeship courses</a>.</p>
+          <p class="govuk-body">In order to find the right apprenticeship for you, you can filter courses by whether or not you have a degree.</p>
+        '
+      }
+    },
+    {
+      heading: { text: "Special educational needs and disabilities (SEND)" },
+      content: {
+        html: '
+          <p class="govuk-body">All initial teacher training courses cover teaching pupils with SEND, but some courses have a SEND specialism.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a class="govuk-link" href="#">Browse primary courses with a SEND specialism</a></li>
+            <li><a class="govuk-link" href="#">Browse secondary courses with a SEND specialism</a></li>
+            <li><a class="govuk-link" href="#">Learn about teaching pupils with special educational needs and disabilities</a></li>
+          </ul>
+        '
+      }
+    },
+    {
+      heading: { text: "Teaching other stages" },
+      content: {
+        html: '
+          <h3 class="govuk-heading-s">Nursery or pre-school</h3>
+          <p class="govuk-body">Help young children under 5 years old to develop by becoming an early years teacher. <a class="govuk-link" href="#">Learn about the routes to become an early years teacher</a>.</p>
+          <h3 class="govuk-heading-s">Further education</h3>
+          <p class="govuk-body">Teach young people and adults over 16 who are not studying for a degree. <a class="govuk-link" href="#">Browse further education courses</a>.</p>
+        '
+      }
+    }
+  ]
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="app-home-panel">
+      <h2 class="govuk-heading-m">How to become a teacher</h2>
+      <p class="govuk-body">
+        Check your qualifications, what funding is available and how to apply.
+        <a class="govuk-link" href="#">Find out how to become a teacher</a>.
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="app-home-panel">
+      <h2 class="govuk-heading-m">Get help and support</h2>
+      <p class="govuk-body">
+        If you're thinking about teaching or are ready to apply,
+        <a class="govuk-link" href="#">contact Get Into Teaching</a> for free support.
+      </p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

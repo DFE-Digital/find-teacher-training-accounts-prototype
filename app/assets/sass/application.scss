@@ -974,6 +974,77 @@ body.app-filter-panel--locked {
     margin-bottom: 0px;
 }
 
+/* Home page panels (match Find’s grey panels with pink left border) */
+.app-home-panel {
+  background-color: #f3f2f1;
+  border-left: 6px solid #d53880;
+  padding: 25px;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.app-home-panel .govuk-heading-m {
+  margin-top: 0;
+}
+
+/* Hide the "Show all sections" control on the home page accordion */
+#home-guidance .govuk-accordion__show-all {
+  display: none;
+}
+
+/* Primary/secondary panels on home page */
+.app-stage-panel {
+  background-color: #f3f2f1;
+  padding: 25px;
+  margin-bottom: 30px;
+  min-height: 160px;
+  box-sizing: border-box;
+}
+
+.app-stage-panel .govuk-heading-m {
+  margin-top: 0;
+}
+
+/* Home search panel (grey container) */
+.app-home-search-panel {
+  background-color: #f3f2f1;
+  padding: 30px;
+}
+
+.app-home-search-panel .govuk-input,
+.app-home-search-panel .govuk-select,
+.app-home-search-panel .autocomplete__input {
+  background-color: #ffffff;
+}
+
+.app-home-search-panel__location-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: end;
+}
+
+.app-home-search-panel__search-button {
+  margin-bottom: 0;
+  align-self: end;
+  white-space: nowrap;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@include govuk-media-query($until: tablet) {
+  .app-home-search-panel {
+    padding: 20px;
+  }
+  .app-home-search-panel__location-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .app-home-search-panel__search-button {
+    width: fit-content;
+  }
+}
+
 .app-govuk-header-flex {
     display: flex;
     justify-content: space-between;

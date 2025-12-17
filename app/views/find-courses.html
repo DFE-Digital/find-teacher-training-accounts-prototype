@@ -1,0 +1,28 @@
+{% extends "layouts/main.html" %}
+{% set pageName="Find courses results" %}
+{% set activePrimaryNav = 'find' %}
+{% block content %}
+
+{% include "_includes/search-results/git-link.html" %}
+
+<h1 class="govuk-heading-l app-page-title" data-results-heading>10,416 courses found</h1>
+<div class="app-search-top-row" data-search-top-row hidden>
+  <div class="app-search-top-row__inner" data-search-target></div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third app-search-and-filter" style="margin-bottom:20px;" data-search-panel-wrapper>
+    {% include "_includes/search-results/search-and-filter.html" %}
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <div data-courses-container>
+      {% include "_includes/search-results/courses.html" %}
+      {% include "_includes/pagination.html" %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
