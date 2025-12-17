@@ -985,3 +985,18 @@ body.app-filter-panel--locked {
   font-weight: 700;
   color: #fff;
 }
+
+.app-active-filters-title-flex {
+display: flex;
+justify-content: space-between;
+}
+
+.app-clear-all {
+  margin-top: 15px;
+  font-size: 19px;
+}
+
+.app-filter-alert__icon {
+    height: 1em;
+    fill: currentColor;
+}
