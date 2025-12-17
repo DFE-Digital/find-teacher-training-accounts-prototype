@@ -973,3 +973,15 @@ body.app-filter-panel--locked {
 .app-card > :last-child {
     margin-bottom: 0px;
 }
+
+.app-govuk-header-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-sign-out-link {
+  margin-bottom: 0;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #fff;
+}
