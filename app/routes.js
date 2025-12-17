@@ -32,15 +32,30 @@ router.post('/add-note', (req, res) => {
   const saved = req.session.data.savedCourses || []
   const idNum = Number.isFinite(parseInt(courseId, 10)) ? parseInt(courseId, 10) : NaN
   const idx = Number.isFinite(parseInt(courseIndex, 10)) ? parseInt(courseIndex, 10) : NaN
+  let targetCourse = null
+  let wasExistingNote = false
   if (!Number.isNaN(idNum)) {
-    const target = saved.find(c => c && c.id === idNum)
-    if (target) {
-      target.note = (noteText || '').trim()
+    targetCourse = saved.find(c => c && c.id === idNum) || null
+    if (targetCourse) {
+      wasExistingNote = !!(targetCourse.note && String(targetCourse.note).trim())
+      targetCourse.note = (noteText || '').trim()
     }
   } else if (!Number.isNaN(idx) && saved[idx]) {
-    saved[idx].note = (noteText || '').trim()
+    targetCourse = saved[idx]
+    wasExistingNote = !!(targetCourse.note && String(targetCourse.note).trim())
+    targetCourse.note = (noteText || '').trim()
   }
   req.session.data.savedCourses = saved
+
+  // Flash success banner for Saved courses
+  if (req.session?.data) {
+    const courseName = targetCourse ? `${targetCourse.provider} - ${targetCourse.title}` : 'this course'
+    req.session.data.noteFlash = {
+      title: wasExistingNote ? 'Note changed' : 'Note added',
+      message: `Your note has been ${wasExistingNote ? 'changed' : 'added'} to ${courseName}.`
+    }
+  }
+
   // Clear transient params to avoid future confusion
   if (req.session?.data) {
     delete req.session.data.id
@@ -51,6 +66,15 @@ router.post('/add-note', (req, res) => {
     delete req.session.data.noteText
   }
   return res.redirect('/saved-courses')
+})
+
+// Render Saved courses and clear any one-time flash banner
+router.get('/saved-courses', (req, res) => {
+  const flash = req.session?.data?.noteFlash || null
+  if (req.session?.data?.noteFlash) {
+    delete req.session.data.noteFlash
+  }
+  return res.render('saved-courses', { noteFlash: flash })
 })
 
 // Debug: dump current session data as formatted JSON
