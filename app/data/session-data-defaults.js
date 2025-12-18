@@ -71,5 +71,45 @@ module.exports = {
         { key: "Start date", value: "September 2026 only" }
       ]
     }
+  ],
+
+  recentSearches: [
+    {
+      id: 0,
+      title: "Physics and Mathematics in M60 2LA",
+      criteria: [
+        { key: "Subject", value: "Physics and Mathematics" },
+        { key: "Location", value: "Within 100 miles of M60 2LA" },
+        { key: "Fee or salary", value: "Salary" }
+      ]
+    },
+    {
+      id: 1,
+      title: "Mathematics in Manchester",
+      criteria: [
+        { key: "Subject", value: "Mathematics" },
+        { key: "Location", value: "Within 50 miles of Manchester" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Mathematics in Salford",
+      criteria: [
+        { key: "Subject", value: "Mathematics" },
+        { key: "Location", value: "Within 25 miles of Salford" },
+        { key: "Fee or salary", value: "Fee-paying courses" }
+      ]
+    },
+    {
+      id: 3,
+      title: "Primary with mathematics",
+      criteria: [
+        { key: "Subject", value: "Primary with mathematics" },
+        { key: "Fee or salary", value: "Fee-paying courses" },
+        { key: "Full time or part time", value: "Part time" },
+        { key: "Qualification", value: "QTS only" },
+        { key: "Start date", value: "September 2026 only" }
+      ]
+    }
   ]
 }

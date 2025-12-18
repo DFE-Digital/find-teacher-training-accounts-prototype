@@ -1,7 +1,7 @@
 <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">{{ alert.title }}</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="find-courses">{{ search.title }}</a>
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
@@ -14,11 +14,14 @@
               Email me courses like this
             </a>
           </li>
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
+          </li>
         </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
-          {% for item in alert.criteria %}
+          {% for item in search.criteria %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               {{ item.key }}

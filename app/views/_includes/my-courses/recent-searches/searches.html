@@ -1,6 +1,5 @@
-    {% if data.emailAlerts and data.emailAlerts.length %}
-      {% for alert in data.emailAlerts %}
-        {% set alertIndex = loop.index0 %}
+    {% if data.recentSearches and data.recentSearches.length %}
+      {% for search in data.recentSearches %}
         {% include "_includes/my-courses/recent-searches/search.html" %}
       {% endfor %}
     {% else %}
