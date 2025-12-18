@@ -940,6 +940,10 @@ body.app-filter-panel--locked {
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    @include govuk-media-query($from: tablet) {
+    padding-left: 0px;
+  }
 }
 
 .app-email-alerts-link {
