@@ -77,6 +77,66 @@ router.get('/saved-courses', (req, res) => {
   return res.render('saved-courses', { noteFlash: flash })
 })
 
+// Delete a note from a saved course (by id, fallback to index)
+router.get('/delete-note', (req, res) => {
+  const saved = req.session.data.savedCourses || []
+  const idNum = Number.isFinite(parseInt(req.query?.id, 10)) ? parseInt(req.query.id, 10) : NaN
+  const idx = Number.isFinite(parseInt(req.query?.index, 10)) ? parseInt(req.query.index, 10) : NaN
+
+  let targetCourse = null
+  if (!Number.isNaN(idNum)) {
+    targetCourse = saved.find(c => c && c.id === idNum) || null
+  } else if (!Number.isNaN(idx) && saved[idx]) {
+    targetCourse = saved[idx]
+  }
+
+  if (targetCourse) {
+    const previousNote = targetCourse.note || ''
+    targetCourse.note = ''
+    req.session.data.savedCourses = saved
+
+    // Store undo payload
+    req.session.data.deletedNote = {
+      courseId: targetCourse.id,
+      note: previousNote
+    }
+
+    // Flash success banner
+    const courseName = `${targetCourse.provider} - ${targetCourse.title}`
+    req.session.data.noteFlash = {
+      title: 'Note deleted',
+      message: `Your note for ${courseName} has been deleted.`,
+      linkText: 'Undo',
+      linkHref: `/undo-delete-note?id=${targetCourse.id}`
+    }
+  }
+
+  return res.redirect('/saved-courses')
+})
+
+// Undo deleting a note (restores last deleted note for that course)
+router.get('/undo-delete-note', (req, res) => {
+  const saved = req.session.data.savedCourses || []
+  const idNum = Number.isFinite(parseInt(req.query?.id, 10)) ? parseInt(req.query.id, 10) : NaN
+  const payload = req.session?.data?.deletedNote
+
+  if (!Number.isNaN(idNum) && payload && payload.courseId === idNum) {
+    const targetCourse = saved.find(c => c && c.id === idNum) || null
+    if (targetCourse) {
+      targetCourse.note = payload.note || ''
+      req.session.data.savedCourses = saved
+      delete req.session.data.deletedNote
+    }
+  }
+
+  // Ensure no banner is shown after undo
+  if (req.session?.data?.noteFlash) {
+    delete req.session.data.noteFlash
+  }
+
+  return res.redirect('/saved-courses')
+})
+
 // Handle Create email alert submission
 router.post('/email-alert-new', (req, res) => {
   const { alertTitle, subject, location, feeOrSalary, studyMode, qualification, startDate, visaSponsorship } = req.body || {}

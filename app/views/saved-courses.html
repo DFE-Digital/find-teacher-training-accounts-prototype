@@ -21,6 +21,11 @@
         <p class="govuk-body">
           {{ noteFlash.message }}
         </p>
+        {% if noteFlash.linkText %}
+        <p class="govuk-body">
+          <a class="govuk-link" href="{{ noteFlash.linkHref }}">{{ noteFlash.linkText }}</a>
+        </p>
+        {% endif %}
       </div>
     </div>
     {% endif %}
