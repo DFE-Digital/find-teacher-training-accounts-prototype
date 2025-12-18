@@ -50,9 +50,10 @@
         {% set finalId = idx %}
       {% endif %}
       <div class="govuk-form-group">
+        <span class="govuk-caption-xl">{% if c %}{{ c.provider }} - {{ c.title }}{% endif %}</span>
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for="note-text">
-            Add a note{% if c %} to {{ c.provider }} - {{ c.title }}{% endif %}
+            Add a note
           </label>
         </h1>
         <textarea class="govuk-textarea" id="note-text" name="noteText" rows="5" aria-describedby="note-text-hint">{{ c and c.note }}</textarea>
