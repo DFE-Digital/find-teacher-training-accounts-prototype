@@ -67,12 +67,21 @@
       You can unsubscribe at any time.
     </p>
 
-<a  class="govuk-button" href="email-alerts">
-  Set up email alert
-</a>
+    <form action="/email-alert-new" method="post" novalidate>
+      <input type="hidden" name="alertTitle" value="Mathematics in Manchester">
+      <input type="hidden" name="subject" value="Mathematics">
+      <input type="hidden" name="feeOrSalary" value="Fee-paying courses">
+      <input type="hidden" name="location" value="Within 50 miles of Manchester">
+      <input type="hidden" name="studyMode" value="Full time">
+      <input type="hidden" name="qualification" value="QTS with PGCE or PGDE">
+      <input type="hidden" name="startDate" value="October 2026 to July 2027">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Set up email alert
+      </button>
+    </form>
 
 <p class="govuk-body">
- <a class="govuk-link" href="#">Cancel</a>
+ <a class="govuk-link" href="saved-courses">Cancel</a>
 </p>
 
 {% endblock %}

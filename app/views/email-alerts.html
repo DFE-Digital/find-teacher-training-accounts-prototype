@@ -7,6 +7,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    {% if emailAlertFlash %}
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="email-alert-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="email-alert-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          {{ emailAlertFlash.heading }}
+        </h3>
+        <p class="govuk-body">{{ emailAlertFlash.messageLine1 }}</p>
+        <p class="govuk-body">
+          {{ emailAlertFlash.messageLine2 }}
+          <a class="govuk-link" href="{{ emailAlertFlash.linkHref }}">{{ emailAlertFlash.linkText }}</a>
+          {{ emailAlertFlash.messageLine3 }}
+        </p>
+      </div>
+    </div>
+    {% endif %}
+
     {% include "_includes/my-courses/sub-nav.html" %}
 
     <h2 class="govuk-heading-l">Email alerts</h2>

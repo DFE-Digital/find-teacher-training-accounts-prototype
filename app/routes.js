@@ -77,6 +77,50 @@ router.get('/saved-courses', (req, res) => {
   return res.render('saved-courses', { noteFlash: flash })
 })
 
+// Handle Create email alert submission
+router.post('/email-alert-new', (req, res) => {
+  const { alertTitle, subject, location, feeOrSalary, studyMode, qualification, startDate, visaSponsorship } = req.body || {}
+  const alerts = req.session.data.emailAlerts || []
+  const nextId = alerts.reduce((m, a) => (a && typeof a.id === 'number' && a.id > m ? a.id : m), -1) + 1
+
+  const criteria = []
+  if (subject) criteria.push({ key: 'Subject', value: subject })
+  if (location) criteria.push({ key: 'Location', value: location })
+  if (feeOrSalary) criteria.push({ key: 'Fee or salary', value: feeOrSalary })
+  if (studyMode) criteria.push({ key: 'Full time or part time', value: studyMode })
+  if (qualification) criteria.push({ key: 'Qualification', value: qualification })
+  if (startDate) criteria.push({ key: 'Start date', value: startDate })
+  if (visaSponsorship) criteria.push({ key: 'Visa sponsorship', value: visaSponsorship })
+
+  alerts.unshift({
+    id: nextId,
+    title: alertTitle || 'Email alert',
+    criteria
+  })
+  req.session.data.emailAlerts = alerts
+
+  // Flash success banner for Email alerts
+  req.session.data.emailAlertFlash = {
+    heading: 'Email alert created',
+    messageLine1: `You have set up an email alert for ${alertTitle || 'this search'}.`,
+    messageLine2: 'We will send you emails about new courses every Monday at 3pm. You can',
+    linkText: 'unsubscribe',
+    linkHref: '#',
+    messageLine3: 'at any time.'
+  }
+
+  return res.redirect('/email-alerts')
+})
+
+// Render Email alerts and clear any one-time flash banner
+router.get('/email-alerts', (req, res) => {
+  const flash = req.session?.data?.emailAlertFlash || null
+  if (req.session?.data?.emailAlertFlash) {
+    delete req.session.data.emailAlertFlash
+  }
+  return res.render('email-alerts', { emailAlertFlash: flash })
+})
+
 // Debug: dump current session data as formatted JSON
 router.get('/debug-session', (req, res) => {
   res.type('application/json').send(JSON.stringify(req.session?.data || {}, null, 2))
