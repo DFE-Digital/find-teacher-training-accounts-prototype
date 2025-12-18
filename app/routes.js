@@ -137,6 +137,67 @@ router.get('/undo-delete-note', (req, res) => {
   return res.redirect('/saved-courses')
 })
 
+// Remove a saved course (by id, fallback to index)
+router.get('/unsave-course', (req, res) => {
+  const saved = req.session.data.savedCourses || []
+  const idNum = Number.isFinite(parseInt(req.query?.id, 10)) ? parseInt(req.query.id, 10) : NaN
+  const idx = Number.isFinite(parseInt(req.query?.index, 10)) ? parseInt(req.query.index, 10) : NaN
+
+  let removedCourse = null
+  let removedIndex = -1
+
+  if (!Number.isNaN(idNum)) {
+    removedIndex = saved.findIndex(c => c && c.id === idNum)
+  } else if (!Number.isNaN(idx)) {
+    removedIndex = idx
+  }
+
+  if (removedIndex > -1 && saved[removedIndex]) {
+    removedCourse = saved[removedIndex]
+    const nextSaved = saved.filter((_, i) => i !== removedIndex)
+    req.session.data.savedCourses = nextSaved
+
+    // Store undo payload (one deep)
+    req.session.data.deletedSavedCourse = {
+      course: removedCourse,
+      index: removedIndex
+    }
+
+    // Flash success banner (matches screenshot)
+    const courseName = `${removedCourse.provider} - ${removedCourse.title}`
+    req.session.data.noteFlash = {
+      title: 'Saved course deleted',
+      message: `${courseName}.`,
+      linkText: 'Undo',
+      linkHref: `/undo-unsave-course?id=${removedCourse.id}`
+    }
+  }
+
+  return res.redirect('/saved-courses')
+})
+
+// Undo removing a saved course (restores last removed course; no banner on return)
+router.get('/undo-unsave-course', (req, res) => {
+  const saved = req.session.data.savedCourses || []
+  const idNum = Number.isFinite(parseInt(req.query?.id, 10)) ? parseInt(req.query.id, 10) : NaN
+  const payload = req.session?.data?.deletedSavedCourse
+
+  if (!Number.isNaN(idNum) && payload && payload.course && payload.course.id === idNum) {
+    const insertIndex = Number.isFinite(parseInt(payload.index, 10)) ? parseInt(payload.index, 10) : 0
+    const nextSaved = saved.slice()
+    nextSaved.splice(Math.max(0, Math.min(insertIndex, nextSaved.length)), 0, payload.course)
+    req.session.data.savedCourses = nextSaved
+    delete req.session.data.deletedSavedCourse
+  }
+
+  // Ensure no banner is shown after undo
+  if (req.session?.data?.noteFlash) {
+    delete req.session.data.noteFlash
+  }
+
+  return res.redirect('/saved-courses')
+})
+
 // Handle Create email alert submission
 router.post('/email-alert-new', (req, res) => {
   const { alertTitle, subject, location, feeOrSalary, studyMode, qualification, startDate, visaSponsorship } = req.body || {}

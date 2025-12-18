@@ -34,11 +34,15 @@
 
     <h2 class="govuk-heading-l">Saved courses</h2>
 
+    {% if data.savedCourses and data.savedCourses.length %}
     {% include "_includes/my-courses/saved-courses/sort.html" %}
 
     {% include "_includes/my-courses/saved-courses/courses.html" %}
 
     {% include "_includes/pagination.html" %}
+    {% else %}
+    {% include "_includes/my-courses/saved-courses/courses.html" %}
+    {% endif %}
 
   </div>
 </div>

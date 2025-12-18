@@ -8,7 +8,11 @@
     <!--<strong class="govuk-tag govuk-tag--red">Not accepting applications</strong>-->
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
+        <a class="govuk-link govuk-link--no-visited-state results-save-course-button__unstyled-button" href="unsave-course?id={{ courseId }}&index={{ courseIndex }}">
+          <span class="save-course-button__icon is-saved" aria-hidden="true"></span>
+          <span class="save-course-button__text">Saved</span>
+          <span class="govuk-visually-hidden">Remove {{ course.title }} from saved courses</span>
+        </a>
       </li>
     </ul>
   </div>
