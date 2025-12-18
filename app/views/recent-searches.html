@@ -1,0 +1,19 @@
+{% extends "layouts/main.html" %}
+{% set activePrimaryNav = 'my' %}
+{% set activeSecondaryNav = 'searches' %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% include "_includes/my-courses/sub-nav.html" %}
+
+    <h2 class="govuk-heading-l">Recent searches</h2>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Clear all recent searches
+    </button>
+
+    {% include "_includes/my-courses/recent-searches/searches.html" %}
+
+{% endblock %}

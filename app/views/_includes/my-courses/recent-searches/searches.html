@@ -1,0 +1,8 @@
+    {% if data.emailAlerts and data.emailAlerts.length %}
+      {% for alert in data.emailAlerts %}
+        {% set alertIndex = loop.index0 %}
+        {% include "_includes/my-courses/recent-searches/search.html" %}
+      {% endfor %}
+    {% else %}
+      {% include "_includes/my-courses/recent-searches/searches-none.html" %}
+    {% endif %}
