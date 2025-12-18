@@ -1062,6 +1062,24 @@ body.app-filter-panel--locked {
   font-size: 16px;
 }
 
+.app-sign-out-link {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.app-sign-out-link .govuk-header__link {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-header-login-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
 .app-active-filters-title-flex {
 display: flex;
 justify-content: space-between;
