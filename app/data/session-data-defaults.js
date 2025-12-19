@@ -68,7 +68,7 @@ module.exports = {
       criteria: [
         { key: "Subject", value: "Mathematics" },
         { key: "Location", value: "Within 50 miles of Manchester" },
-        { key: "Fee or salary", value: "Fee-paying" },
+        { key: "Fee or salary", value: "Fee-paying courses" },
         { key: "Full time or part time", value: "Full time" },
         { key: "Qualification", value: "QTS with PGCE or PGDE" },
         { key: "Start date", value: "October 2026 to July 2027" }
