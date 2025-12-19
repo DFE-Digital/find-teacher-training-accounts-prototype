@@ -52,7 +52,9 @@ router.post('/add-note', (req, res) => {
     const courseName = targetCourse ? `${targetCourse.provider} - ${targetCourse.title}` : 'this course'
     req.session.data.noteFlash = {
       title: wasExistingNote ? 'Note updated' : 'Note added',
-      message: `Your note has been ${wasExistingNote ? 'changed' : 'added'} to ${courseName}.`
+      message: wasExistingNote
+        ? `Your note for ${courseName} has been updated.`
+        : `Your note has been added to ${courseName}.`
     }
   }
 
