@@ -1094,3 +1094,17 @@ justify-content: space-between;
     height: 1em;
     fill: currentColor;
 }
+
+.app-home-search-subject {
+
+  @include govuk-media-query($from: tablet) {
+    width: 43%;
+  }
+}
+
+.app-home-search-location {
+
+  @include govuk-media-query($from: tablet) {
+    width: 57%;
+  }
+}
