@@ -983,8 +983,12 @@ body.app-filter-panel--locked {
   background-color: #f3f2f1;
   border-left: 6px solid #d53880;
   padding: 25px;
-  height: 200px;
+  height: 145px;
   box-sizing: border-box;
+  margin-bottom: 20px;
+    @include govuk-media-query($from: tablet) {
+    height: 180px;
+  }
 }
 
 .app-home-panel .govuk-heading-m {
@@ -1001,7 +1005,6 @@ body.app-filter-panel--locked {
   background-color: #f3f2f1;
   padding: 25px;
   margin-bottom: 30px;
-  min-height: 160px;
   box-sizing: border-box;
 }
 
@@ -1107,4 +1110,10 @@ justify-content: space-between;
   @include govuk-media-query($from: tablet) {
     width: 57%;
   }
+}
+
+.app-summary-list-actions-divider {
+    border-right: 1px solid #b1b4b6;
+    padding-right: 10px;
+    margin-right: 5px;
 }
