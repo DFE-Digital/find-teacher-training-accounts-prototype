@@ -1,0 +1,63 @@
+{#
+  One Login layout (blue header + simple tab nav) used for the One Login “Your services” page.
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+  <header class="app-one-login-header" role="banner">
+    <div class="govuk-width-container app-one-login-header__inner">
+      <a class="app-one-login-header__brand" href="one-login-services">
+        <svg class="app-one-login-header__crown" width="32" height="26" viewBox="0 0 44 35" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M22 0l6 10 10-6-3 12 9 5-9 4 3 10H6l3-10-9-4 9-5L6 4l10 6 6-10z"></path>
+        </svg>
+        <span class="app-one-login-header__brand-text"><strong>GOV.UK</strong> One Login</span>
+      </a>
+      <div class="app-one-login-header__actions">
+        <a class="app-one-login-header__link" href="#">Sign out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-one-login-nav" role="navigation" aria-label="Primary">
+    <div class="govuk-width-container">
+      <ul class="app-one-login-nav__list">
+        <li class="app-one-login-nav__item">
+          <a class="app-one-login-nav__link{% if oneLoginActiveTab == 'services' %} app-one-login-nav__link--active{% endif %}" href="one-login-services"{% if oneLoginActiveTab == 'services' %} aria-current="page"{% endif %}>
+            Your services
+          </a>
+        </li>
+        <li class="app-one-login-nav__item">
+          <a class="app-one-login-nav__link{% if oneLoginActiveTab == 'security' %} app-one-login-nav__link--active{% endif %}" href="one-login-security"{% if oneLoginActiveTab == 'security' %} aria-current="page"{% endif %}>
+            Security
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-width-container">
+    <div class="app-one-login-beta">
+      <strong class="govuk-tag app-one-login-beta__tag">BETA</strong>
+      <span class="govuk-body app-one-login-beta__text">
+        This is a new service. Help us improve it and
+        <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank" rel="noopener noreferrer">give your feedback (opens in a new tab)</a>.
+      </span>
+    </div>
+
+    <div class="app-one-login-lang">
+      <span class="govuk-body">English</span>
+      <span class="govuk-body app-one-login-lang__divider" aria-hidden="true">|</span>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Cymraeg</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  <div class="app-one-login-footer-bar" aria-hidden="true"></div>
+  {{ super() }}
+{% endblock %}
+
+

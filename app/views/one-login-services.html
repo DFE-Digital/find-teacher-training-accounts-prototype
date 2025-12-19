@@ -1,0 +1,50 @@
+{% extends "layouts/one-login.html" %}
+{% set oneLoginActiveTab = 'services' %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your services</h1>
+
+      <p class="govuk-body">
+        You’re signed in as <strong>kelliematheson@gmail.com</strong>.
+      </p>
+
+      <p class="govuk-body">
+        When you access a service with your GOV.UK One Login, it will appear here. You can go directly to a service to use it again.
+      </p>
+
+      <h2 class="govuk-heading-m">Your accounts</h2>
+
+      <div class="app-one-login-card">
+        <div class="app-one-login-card__header">
+          <h3 class="govuk-heading-s app-one-login-card__title">Find teacher training courses</h3>
+        </div>
+        <div class="app-one-login-card__body">
+          <p class="govuk-body">Find courses by subject, location or training provider.</p>
+          <p class="govuk-body">
+            <a class="govuk-link govuk-link--no-visited-state" href="index">Go to your Find teacher training courses account</a>
+          </p>
+          <p class="govuk-body govuk-hint">Last used: 28 November 2025</p>
+        </div>
+      </div>
+
+      <div class="app-one-login-card app-one-login-card--muted">
+        <div class="app-one-login-card__body">
+          <h2 class="govuk-heading-m">Services you can use with GOV.UK One Login</h2>
+          <p class="govuk-body">
+            GOV.UK One Login is new. At the moment you can only use it to access some government services.
+          </p>
+          <p class="govuk-body">
+            In the future, you’ll be able to use GOV.UK One Login to access all services on GOV.UK.
+          </p>
+          <p class="govuk-body">
+            See the <a class="govuk-link govuk-link--no-visited-state" href="#">services you can use with GOV.UK One Login</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
