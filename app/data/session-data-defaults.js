@@ -41,18 +41,6 @@ module.exports = {
 
   emailAlerts: [
     {
-      id: 0,
-      title: "Mathematics in Manchester",
-      criteria: [
-        { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 50 miles of Manchester" },
-        { key: "Fee or salary", value: "Fee-paying" },
-        { key: "Full time or part time", value: "Full time" },
-        { key: "Qualification", value: "QTS with PGCE or PGDE" },
-        { key: "Start date", value: "October 2026 to July 2027" }
-      ]
-    },
-    {
       id: 1,
       title: "Physics and Mathematics in M60 2LA",
       criteria: [
@@ -76,19 +64,23 @@ module.exports = {
   recentSearches: [
     {
       id: 0,
+      title: "Mathematics in Manchester",
+      criteria: [
+        { key: "Subject", value: "Mathematics" },
+        { key: "Location", value: "Within 50 miles of Manchester" },
+        { key: "Fee or salary", value: "Fee-paying" },
+        { key: "Full time or part time", value: "Full time" },
+        { key: "Qualification", value: "QTS with PGCE or PGDE" },
+        { key: "Start date", value: "October 2026 to July 2027" }
+      ]
+    },
+    {
+      id: 1,
       title: "Physics and Mathematics in M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "Within 100 miles of M60 2LA" },
         { key: "Fee or salary", value: "Salary" }
-      ]
-    },
-    {
-      id: 1,
-      title: "Mathematics in Manchester",
-      criteria: [
-        { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 50 miles of Manchester" }
       ]
     },
     {
