@@ -858,7 +858,7 @@ body.app-filter-panel--locked {
 }
 
 .moj-sub-navigation__item {
-    font-size: 1rem;
+    font-size: 19px;
     font-weight: 400;
     line-height: 1.25;
     box-shadow: inset 0 -1px 0 #b1b4b6;
@@ -1265,4 +1265,28 @@ justify-content: space-between;
 .app-one-login-footer-bar {
   height: 6px;
   background: #1d70b8;
+}
+
+.app-inset-text {
+  margin-bottom: 30px;
+}
+
+.app-heading-l {
+  font-size: 27px;
+  @include govuk-media-query($from: tablet) {
+    font-size: 36px;
+  }
+}
+
+.app-body {
+  font-size: 19px;
+}
+
+.app-summary-card__title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  @include govuk-media-query($from: tablet) {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
 }

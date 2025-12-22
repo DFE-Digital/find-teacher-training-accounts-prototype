@@ -1,7 +1,7 @@
 <div class="govuk-summary-card">
 
   <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
+    <h2 class="govuk-summary-card__title app-body app-summary-card__title">
       <a href="#" class="govuk-link--no-visited-state">{{ course.provider }}
       <br>{{ course.title }}</a>
     </h2>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
+    <dl class="govuk-summary-list app-body">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Nearest placement school
@@ -44,7 +44,7 @@
           {% endif %}
         {% if course.funding %}
         <br>
-          <span class="govuk-hint govuk-!-font-size-16">
+          <span class="govuk-hint govuk-!-font-size-19">
             {{ course.funding }}
           </span>
         {% endif %}
