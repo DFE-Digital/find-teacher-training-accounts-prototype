@@ -1083,6 +1083,114 @@ body.app-filter-panel--locked {
   flex: 0 0 auto;
 }
 
+.app-header-account-nav {
+  position: relative;
+}
+
+.app-header-account-nav__toggle {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.app-header-account-nav__toggle::after {
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border-color: currentColor;
+  clip-path: unset;
+  transform: translateY(-10%) rotate(135deg); // down
+}
+
+.app-header-account-nav__toggle[aria-expanded="true"]::after {
+  transform: translateY(20%) rotate(-45deg); // up
+}
+
+.app-header-account-nav__toggle[aria-expanded="true"] {
+  color: #0b0c0c;
+  background: #fd0;
+  box-shadow: 0 -3px #fd0, 0 4px #0b0c0c;
+}
+
+.app-header-account-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@include govuk-media-query($until: tablet) {
+  .app-sign-out-link {
+    display: none;
+  }
+
+  .app-header-account-nav {
+    display: block;
+  }
+
+  .app-header-account-nav__toggle {
+    color: #ffffff !important;
+    background: #1d70b8 !important;
+  }
+
+  .app-header-account-nav__toggle[aria-expanded="true"] {
+    color: #1d70b8 !important;
+    background: #ffffff !important;
+    box-shadow: inset 0 -4px 0 #1d70b8;
+  }
+
+  .app-header-account-nav__list {
+    background: #ffffff;
+    box-shadow: inset 0 -1px 0 #b1b4b6, inset 0 1px 0 #b1b4b6;
+  }
+
+  .app-header-account-nav__item + .app-header-account-nav__item {
+    border-top: 1px solid #b1b4b6;
+  }
+
+  .app-header-account-nav__link {
+    display: block;
+    padding: 14px 15px;
+    color: #1d70b8 !important;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .app-header-account-nav__link:visited {
+    color: #1d70b8 !important;
+  }
+
+  .app-header-account-nav__link:hover {
+    text-decoration: underline;
+  }
+
+  .app-header-account-nav__link:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    color: #0b0c0c !important;
+    background: #fd0;
+  }
+}
+
+@include govuk-media-query($from: tablet) {
+  .app-sign-out-link {
+    display: flex;
+  }
+
+  .app-header-account-nav,
+  .app-header-account-nav__list {
+    display: none !important;
+  }
+}
+
 .app-active-filters-title-flex {
 display: flex;
 justify-content: space-between;
@@ -1122,6 +1230,13 @@ justify-content: space-between;
 .app-one-login-header {
   background: #1d70b8;
   color: #fff;
+}
+
+.app-one-login-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
 }
 
 .app-one-login-header__inner {
@@ -1170,6 +1285,136 @@ justify-content: space-between;
 
 .app-one-login-header__link:hover {
   text-decoration: underline;
+}
+
+// One Login / Sign out menu (uses GOV.UK Service Navigation JS for mobile toggle)
+.app-one-login-account-nav__toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  padding: 6px 2px;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.app-one-login-account-nav__toggle:focus {
+  outline: 3px solid #fd0;
+  outline-offset: 2px;
+}
+
+/* Toggle icon is now an inline SVG (see layouts), avoiding mask rendering issues */
+
+.app-one-login-account-nav__toggle::after {
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border-color: currentColor;
+  clip-path: unset;
+  transform: translateY(-10%) rotate(135deg); // points down
+  margin-left: 2px;
+}
+
+.app-one-login-account-nav__toggle[aria-expanded="true"]::after {
+  transform: translateY(20%) rotate(-45deg); // points up
+}
+
+.app-one-login-account-nav__toggle[aria-expanded="true"] {
+  color: #0b0c0c;
+  background: #fd0;
+  box-shadow: 0 -3px #fd0, 0 4px #0b0c0c;
+}
+
+.app-one-login-account-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-one-login-account-nav__link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+// Mobile: dropdown menu under the One Login button
+@include govuk-media-query($until: tablet) {
+  .app-one-login-header__brand-text {
+    font-size: 22px;
+  }
+
+  .app-one-login-header__brand-onelogin {
+    display: none;
+  }
+
+  .app-one-login-header__link {
+    display: none;
+  }
+
+  .app-one-login-account-nav {
+    display: block;
+  }
+
+  .app-one-login-account-nav__toggle {
+    color: #ffffff !important;
+    background: #1d70b8 !important;
+  }
+
+  .app-one-login-account-nav__toggle[aria-expanded="true"] {
+    color: #1d70b8 !important;
+    background: #ffffff !important;
+    box-shadow: inset 0 -4px 0 #1d70b8;
+  }
+
+  .app-one-login-account-nav__list {
+    background: #ffffff;
+    box-shadow: inset 0 -1px 0 #b1b4b6, inset 0 1px 0 #b1b4b6;
+  }
+
+  .app-one-login-account-nav__item + .app-one-login-account-nav__item {
+    border-top: 1px solid #b1b4b6;
+  }
+
+  .app-one-login-account-nav__link {
+    display: block;
+    padding: 14px 15px;
+    color: #1d70b8;
+    font-weight: 700;
+  }
+
+  .app-one-login-account-nav__link:visited {
+    color: #1d70b8;
+  }
+
+  .app-one-login-account-nav__link:hover {
+    text-decoration: underline;
+  }
+
+  .app-one-login-account-nav__link:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    color: #0b0c0c;
+    background: #fd0;
+  }
+}
+
+@include govuk-media-query($from: tablet) {
+  .app-one-login-header__link {
+    display: inline-block;
+  }
+
+  .app-one-login-account-nav,
+  .app-one-login-account-nav__list {
+    display: none !important;
+  }
 }
 
 .app-one-login-nav {

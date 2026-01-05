@@ -54,9 +54,34 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
           </a>
           <a class="govuk-header__link" href="#">Sign out</a>
         </p>
+
+        <nav class="app-header-account-nav govuk-service-navigation" data-module="govuk-service-navigation" aria-label="One Login">
+          <button
+            type="button"
+            class="app-header-account-nav__toggle govuk-service-navigation__toggle govuk-js-service-navigation-toggle govuk-header__link"
+            aria-controls="header-account-nav"
+            hidden
+          >
+            <svg class="app-header-login-icon" width="22" height="22" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5Zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5Z"/>
+            </svg>
+            One Login
+          </button>
+        </nav>
       </div>
     </div>
   </div>
+
+  <ul class="app-header-account-nav__list govuk-service-navigation__list" id="header-account-nav" hidden>
+    <li class="app-header-account-nav__item govuk-service-navigation__item">
+      <a class="app-header-account-nav__link govuk-service-navigation__link govuk-header__link app-header-login-link" href="one-login-services">
+        GOV.UK One Login
+      </a>
+    </li>
+    <li class="app-header-account-nav__item govuk-service-navigation__item">
+      <a class="app-header-account-nav__link govuk-service-navigation__link govuk-header__link" href="#">Sign out</a>
+    </li>
+  </ul>
 </header>
 
 <section aria-label="Service information" class="govuk-service-navigation"
