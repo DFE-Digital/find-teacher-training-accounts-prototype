@@ -25,7 +25,8 @@ module.exports = {
       feeText: "fee for UK citizens",
       feeExtraAmount: "£17,500",
       feeExtraText: "fee for Non-UK citizens",
-      funding: "Bursaries of £29,000 are available"
+      funding: "Bursaries of £29,000 are available",
+      notAcceptingApplications: true
     },
     {
       provider: "University of Sheffield",

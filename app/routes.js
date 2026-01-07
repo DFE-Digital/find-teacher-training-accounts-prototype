@@ -226,7 +226,7 @@ router.post('/email-alert-new', (req, res) => {
   req.session.data.emailAlertFlash = {
     heading: 'Email alert created',
     messageLine1: `You have set up an email alert for ${alertTitle || 'this search'}.`,
-    messageLine2: 'We will send you emails about new courses every Monday at 3pm. You can',
+    messageLine2: 'We’ll email you weekly when new courses are added. You can',
     linkText: 'unsubscribe',
     linkHref: '#',
     messageLine3: 'at any time.'

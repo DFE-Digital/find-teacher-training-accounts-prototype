@@ -412,10 +412,12 @@ body.app-filter-panel--locked {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 0; /* V2 was not here at all */
+  margin-top: 20px;
 
   @include govuk-media-query($from: tablet) {
     font-size: 24px;
     font-weight: 700;
+    margin-top: 0;
   }
 }
 
@@ -1540,5 +1542,26 @@ justify-content: space-between;
   margin-top: 10px;
   @include govuk-media-query($from: tablet) {
     margin-top: 0;
+  }
+}
+
+.closed-tag {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  min-width: 190px;
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: 0;
+    min-width: 225px;
+  }
+}
+
+.app-email-link {
+  font-size: 19px;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  @include govuk-media-query($from: tablet) {
+    font-size: 19px;
+      margin-top: 20px !important;
+      margin-bottom: 10px !important;
   }
 }
