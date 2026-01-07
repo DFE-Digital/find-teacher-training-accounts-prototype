@@ -1542,3 +1542,13 @@ justify-content: space-between;
     margin-top: 0;
   }
 }
+
+.closed-tag {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  min-width: 190px;
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: 0;
+    min-width: 225px;
+  }
+}
