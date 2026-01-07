@@ -5,10 +5,12 @@
       <a href="#" class="govuk-link--no-visited-state">{{ course.provider }}
       <br>{{ course.title }}</a>
       <!--closed tag-->
+      {% if course.notAcceptingApplications %}
       <br>
       <strong class="govuk-tag govuk-tag--red closed-tag">
         Not accepting applications
       </strong>
+      {% endif %}
       <!--closed tag end-->
     </h2>
     <!--<strong class="govuk-tag govuk-tag--red">Not accepting applications</strong>-->
