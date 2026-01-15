@@ -34,6 +34,27 @@
 
     <h2 class="govuk-heading-l app-heading-l">Saved courses</h2>
 
+<div class="saved-courses-search-bg">
+  <h3 class="govuk-heading-m">View nearest placement schools</h3>
+  <p class="govuk-body">Add a location to see the nearest placement schools for each saved course.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half app-home-search-location">
+        <div class="govuk-form-group saved-courses-search-form">
+          <label class="govuk-label govuk-label--s govuk-!-font-weight-bold" for="search-by-location">
+            City, town or postcode
+          </label>
+          <div class="app-home-search-panel__location-row">
+            <input class="govuk-input app-home-search-panel__location-input" id="search-by-location" name="location" type="text" autocomplete="postal-code" placeholder="Manchester">
+            <button class="govuk-button app-home-search-panel__search-button" data-module="govuk-button" type="submit">
+              Add location
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
     {% if data.savedCourses and data.savedCourses.length %}
     {% include "_includes/my-courses/saved-courses/sort.html" %}
 

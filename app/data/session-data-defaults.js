@@ -10,17 +10,17 @@ module.exports = {
       feeText: "Salary (apprenticeship)"
     },
     {
-      provider: "Birmingham City University",
+      provider: "University of Manchester",
       title: "Mathematics (3CGN)",
-      distance: "3 miles from M60 2LA",
+      distance: "3 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       funding: "Bursaries of £29,000 are available"
     },
     {
-      provider: "University of Sunderland",
+      provider: "Best Practice Network",
       title: "Mathematics (S252)",
-      distance: "29 miles from M50 2LA",
+      distance: "20 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       feeExtraAmount: "£17,500",
@@ -29,9 +29,9 @@ module.exports = {
       notAcceptingApplications: true
     },
     {
-      provider: "University of Sheffield",
+      provider: "United Teaching National SCITT",
       title: "Physics (F3X1)",
-      distance: "10 miles from Oldham",
+      distance: "14 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       feeExtraAmount: "£25,605",
@@ -43,7 +43,7 @@ module.exports = {
   emailAlerts: [
     {
       id: 1,
-      title: "Physics and Mathematics in M60 2LA",
+      title: "Physics and Mathematics courses within 100 miles of M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "Within 100 miles of M60 2LA" },
@@ -51,7 +51,7 @@ module.exports = {
     },
     {
       id: 2,
-      title: "Primary with mathematics",
+      title: "Primary with mathematics courses in England",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },
@@ -65,10 +65,11 @@ module.exports = {
   recentSearches: [
     {
       id: 0,
-      title: "Mathematics in Manchester",
+      title: "Mathematics courses within 50 miles of Manchester",
       criteria: [
         { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 50 miles of Manchester" },
+        { key: "Location", value: "Manchester" },
+        { key: "Search radius", value: "50 miles" },
         { key: "Fee or salary", value: "Fee-paying courses" },
         { key: "Full time or part time", value: "Full time" },
         { key: "Qualification", value: "QTS with PGCE or PGDE" },
@@ -77,25 +78,27 @@ module.exports = {
     },
     {
       id: 1,
-      title: "Physics and Mathematics in M60 2LA",
+      title: "Physics and Mathematics courses within 100 miles of M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
-        { key: "Location", value: "Within 100 miles of M60 2LA" },
+        { key: "Location", value: "M60 2LA" },
+        { key: "Search radius", value: "100 miles" },
         { key: "Fee or salary", value: "Salary" }
       ]
     },
     {
       id: 2,
-      title: "Mathematics in Salford",
+      title: "Mathematics courses within 25 miles of Salford",
       criteria: [
         { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 25 miles of Salford" },
+        { key: "Location", value: "Salford" },
+        { key: "Search radius", value: "25 miles" },
         { key: "Fee or salary", value: "Fee-paying courses" }
       ]
     },
     {
       id: 3,
-      title: "Primary with mathematics",
+      title: "Primary with mathematics courses in England",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },

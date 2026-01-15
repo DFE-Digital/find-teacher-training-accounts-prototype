@@ -1,3 +1,9 @@
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body app-body">We'll email you weekly when new courses are added that meet these criteria.
+You can unsubscribe any time.</p>
     {% if data.emailAlerts and data.emailAlerts.length %}
       {% for alert in data.emailAlerts %}
         {% set alertIndex = loop.index0 %}
@@ -6,3 +12,5 @@
     {% else %}
       {% include "_includes/my-courses/email-alerts/alerts-none.html" %}
     {% endif %}
+  </div>
+</div>
