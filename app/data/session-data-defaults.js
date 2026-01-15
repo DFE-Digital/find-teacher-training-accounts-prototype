@@ -43,7 +43,7 @@ module.exports = {
   emailAlerts: [
     {
       id: 1,
-      title: "Physics and Mathematics courses in M60 2LA",
+      title: "Physics and Mathematics courses within 100 miles of M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "Within 100 miles of M60 2LA" },
@@ -51,7 +51,7 @@ module.exports = {
     },
     {
       id: 2,
-      title: "Primary with mathematics courses",
+      title: "Primary with mathematics courses in England",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },
@@ -65,7 +65,7 @@ module.exports = {
   recentSearches: [
     {
       id: 0,
-      title: "Mathematics courses in Manchester",
+      title: "Mathematics courses within 50 miles of Manchester",
       criteria: [
         { key: "Subject", value: "Mathematics" },
         { key: "Location", value: "Manchester" },
@@ -78,7 +78,7 @@ module.exports = {
     },
     {
       id: 1,
-      title: "Physics and Mathematics courses in M60 2LA",
+      title: "Physics and Mathematics courses within 100 miles of M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "M60 2LA" },
@@ -88,7 +88,7 @@ module.exports = {
     },
     {
       id: 2,
-      title: "Mathematics courses in Salford",
+      title: "Mathematics courses within 25 miles of Salford",
       criteria: [
         { key: "Subject", value: "Mathematics" },
         { key: "Location", value: "Salford" },
@@ -98,7 +98,7 @@ module.exports = {
     },
     {
       id: 3,
-      title: "Primary with mathematics courses",
+      title: "Primary with mathematics courses in England",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },
