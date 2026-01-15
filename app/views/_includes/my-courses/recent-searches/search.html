@@ -1,9 +1,12 @@
 <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title app-body app-summary-card__title">
-          <a class="govuk-link govuk-link--no-visited-state" href="find-courses">{{ search.title }}</a>
+          {{ search.title }}
         </h2>
         <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action app-body">
+            <a class="govuk-link govuk-link--no-visited-state" href="find-courses">Search again</a>
+          </li>
           <li class="govuk-summary-card__action app-body">
             <a class="govuk-link govuk-link--no-visited-state" href="email-alert-new">
               <span>
@@ -17,17 +20,16 @@
         </ul>
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
+        <p class="govuk-body">Active filters for this search</p>
+        <ul class="filter-tags">
           {% for item in search.criteria %}
-          <div class="govuk-summary-list__row app-body">
-            <dt class="govuk-summary-list__key">
-              {{ item.key }}
-            </dt>
-            <dd class="govuk-summary-list__value">
+            <li>
+            <span type="button" class="filter__tag--recent-searches" data-remove-filter="primary"><span class="filter__tag--text--recent-searches">
+              {{ item.key }}:
               {{ item.value }}
-            </dd>
-          </div>
+              </span></span>
+            </li>
           {% endfor %}
-        </dl>
+        </ul>
       </div>
     </div>

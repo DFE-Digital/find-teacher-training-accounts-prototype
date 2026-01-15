@@ -68,7 +68,8 @@ module.exports = {
       title: "Mathematics in Manchester",
       criteria: [
         { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 50 miles of Manchester" },
+        { key: "Location", value: "Manchester" },
+        { key: "Search radius", value: "50 miles" },
         { key: "Fee or salary", value: "Fee-paying courses" },
         { key: "Full time or part time", value: "Full time" },
         { key: "Qualification", value: "QTS with PGCE or PGDE" },
@@ -80,7 +81,8 @@ module.exports = {
       title: "Physics and Mathematics in M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
-        { key: "Location", value: "Within 100 miles of M60 2LA" },
+        { key: "Location", value: "M60 2LA" },
+        { key: "Search radius", value: "100 miles" },
         { key: "Fee or salary", value: "Salary" }
       ]
     },
@@ -89,7 +91,8 @@ module.exports = {
       title: "Mathematics in Salford",
       criteria: [
         { key: "Subject", value: "Mathematics" },
-        { key: "Location", value: "Within 25 miles of Salford" },
+        { key: "Subject", value: "Salford" },
+        { key: "Search radius", value: "25 miles" },
         { key: "Fee or salary", value: "Fee-paying courses" }
       ]
     },
