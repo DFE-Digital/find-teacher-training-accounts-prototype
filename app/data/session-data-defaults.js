@@ -65,7 +65,7 @@ module.exports = {
   recentSearches: [
     {
       id: 0,
-      title: "Mathematics in Manchester",
+      title: "Mathematics courses in Manchester",
       criteria: [
         { key: "Subject", value: "Mathematics" },
         { key: "Location", value: "Manchester" },
@@ -78,7 +78,7 @@ module.exports = {
     },
     {
       id: 1,
-      title: "Physics and Mathematics in M60 2LA",
+      title: "Physics and Mathematics courses in M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "M60 2LA" },
@@ -88,17 +88,17 @@ module.exports = {
     },
     {
       id: 2,
-      title: "Mathematics in Salford",
+      title: "Mathematics courses in Salford",
       criteria: [
         { key: "Subject", value: "Mathematics" },
-        { key: "Subject", value: "Salford" },
+        { key: "Location", value: "Salford" },
         { key: "Search radius", value: "25 miles" },
         { key: "Fee or salary", value: "Fee-paying courses" }
       ]
     },
     {
       id: 3,
-      title: "Primary with mathematics",
+      title: "Primary with mathematics courses",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },
