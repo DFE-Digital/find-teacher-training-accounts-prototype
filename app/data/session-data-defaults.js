@@ -43,7 +43,7 @@ module.exports = {
   emailAlerts: [
     {
       id: 1,
-      title: "Physics and Mathematics in M60 2LA",
+      title: "Physics and Mathematics courses in M60 2LA",
       criteria: [
         { key: "Subject", value: "Physics and Mathematics" },
         { key: "Location", value: "Within 100 miles of M60 2LA" },
@@ -51,7 +51,7 @@ module.exports = {
     },
     {
       id: 2,
-      title: "Primary with mathematics",
+      title: "Primary with mathematics courses",
       criteria: [
         { key: "Subject", value: "Primary with mathematics" },
         { key: "Fee or salary", value: "Fee-paying courses" },
