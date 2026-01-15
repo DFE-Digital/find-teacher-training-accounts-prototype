@@ -556,7 +556,7 @@ body.app-filter-panel--locked {
     display: flex;
     align-items: center;
     color: #0b0c0c;
-    background-color: #f3f2f1; /* V2 was #fff */
+    background-color: #fff; /* V2 was #fff */
     font-family: "GDS Transport", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1597,10 +1597,46 @@ justify-content: space-between;
 
 .saved-courses-search-bg {
   background-color: #f3f2f1;
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+    @include govuk-media-query($from: tablet) {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
 }
 
 .saved-courses-search-form {
   margin-bottom: 0;
+}
+
+.app-summary-card__title-wrapper {
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+  background-color: #f3f2f1;
+}
+
+.app-summary-list {
+  display: block;
+}
+
+.app-summary-list__row {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.app-summary-list__key {
+  display: block;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.app-summary-list__value {
+  display: block;
+  padding: 0 !important;
+  margin-bottom: 15px;
+}
+
+.app-summary-card__actions {
+ text-align: left;
+ justify-content: left;
 }
