@@ -10,17 +10,17 @@ module.exports = {
       feeText: "Salary (apprenticeship)"
     },
     {
-      provider: "Birmingham City University",
+      provider: "University of Manchester",
       title: "Mathematics (3CGN)",
-      distance: "3 miles from M60 2LA",
+      distance: "3 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       funding: "Bursaries of £29,000 are available"
     },
     {
-      provider: "University of Sunderland",
+      provider: "Best Practice Network",
       title: "Mathematics (S252)",
-      distance: "29 miles from M50 2LA",
+      distance: "20 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       feeExtraAmount: "£17,500",
@@ -29,9 +29,9 @@ module.exports = {
       notAcceptingApplications: true
     },
     {
-      provider: "University of Sheffield",
+      provider: "United Teaching National SCITT",
       title: "Physics (F3X1)",
-      distance: "10 miles from Oldham",
+      distance: "14 miles from Manchester",
       feeAmount: "£9,535",
       feeText: "fee for UK citizens",
       feeExtraAmount: "£25,605",
