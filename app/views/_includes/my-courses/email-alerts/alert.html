@@ -1,22 +1,22 @@
-<div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
+<div class="govuk-summary-card govuk-summary-list--no-border">
+      <div class="app-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title app-body app-summary-card__title">
           {{ alert.title }}
         </h2>
-        <ul class="govuk-summary-card__actions">
+        <ul class="govuk-summary-card__actions app-summary-card__actions">
           <li class="govuk-summary-card__action app-body">
             <a class="govuk-link govuk-link--no-visited-state" href="#">Unsubscribe</a>
           </li>
         </ul>
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
+        <dl class="govuk-summary-list app-summary-list">
           {% for item in alert.criteria %}
-          <div class="govuk-summary-list__row app-body">
-            <dt class="govuk-summary-list__key">
+          <div class="govuk-summary-list__row app-summary-list__row app-body">
+            <dt class="govuk-summary-list__key app-summary-list__key">
               {{ item.key }}
             </dt>
-            <dd class="govuk-summary-list__value">
+            <dd class="govuk-summary-list__value app-summary-list__value">
               {{ item.value }}
             </dd>
           </div>
