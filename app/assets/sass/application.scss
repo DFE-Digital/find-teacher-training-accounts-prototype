@@ -1648,7 +1648,7 @@ justify-content: space-between;
   min-height: 100px;
   @include govuk-media-query($from: tablet) {
     padding: 20px;
-    min-height: 120px;
+    min-height: 110px;
 }
 }
 
@@ -1660,7 +1660,7 @@ justify-content: space-between;
   min-height: 100px;
   @include govuk-media-query($from: tablet) {
     padding: 20px;
-    min-height: 120px;
+    min-height: 110px;
   }
 }
 
