@@ -1,14 +1,15 @@
-{% extends "layouts/main.html" %}
-{% set activePrimaryNav = 'my' %}
-{% set activeSecondaryNav = 'saved' %}
-
-{% block content %}
+{% extends "layouts/main.html" %} {% set activePrimaryNav = 'my' %} {% set
+activeSecondaryNav = 'saved' %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     {% if noteFlash %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="note-banner-title" data-module="govuk-notification-banner">
+    <div
+      class="govuk-notification-banner govuk-notification-banner--success"
+      role="alert"
+      aria-labelledby="note-banner-title"
+      data-module="govuk-notification-banner"
+    >
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="note-banner-title">
           Success
@@ -18,12 +19,12 @@
         <h3 class="govuk-notification-banner__heading">
           {{ noteFlash.title }}
         </h3>
-        <p class="govuk-body">
-          {{ noteFlash.message }}
-        </p>
+        <p class="govuk-body">{{ noteFlash.message }}</p>
         {% if noteFlash.linkText %}
         <p class="govuk-body">
-          <a class="govuk-link" href="{{ noteFlash.linkHref }}">{{ noteFlash.linkText }}</a>
+          <a class="govuk-link" href="{{ noteFlash.linkHref }}"
+            >{{ noteFlash.linkText }}</a
+          >
         </p>
         {% endif %}
       </div>
@@ -32,20 +33,46 @@
 
     <h2 class="govuk-heading-l app-heading-l">Saved courses</h2>
 
-<div class="saved-courses-search-bg">
-  <h3 class="govuk-heading-m">View nearest placement schools</h3>
-  <p class="govuk-body">Add a location to see the nearest placement schools for each saved course.</p>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half app-home-search-location">
-        <div class="govuk-form-group saved-courses-search-form">
-          <label class="govuk-label govuk-label--s govuk-!-font-weight-bold" for="search-by-location">
-            City, town or postcode
-          </label>
-          <div class="app-home-search-panel__location-row">
+    <div class="saved-courses-search-bg">
+      <h3 class="govuk-heading-m">View nearest placement schools</h3>
+      <p class="govuk-body">
+        Add a location to see the nearest placement schools for each saved
+        course.
+      </p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full app-home-search-location">
+          <div class="govuk-form-group saved-courses-search-form">
+            <label
+              class="govuk-label govuk-label--s govuk-!-font-weight-bold"
+              for="search-by-location"
+            >
+              City, town or postcode
+            </label>
+            <!-- <div class="app-home-search-panel__location-row">
             <input class="govuk-input app-home-search-panel__location-input" id="search-by-location" name="location" type="text" autocomplete="postal-code" placeholder="Manchester">
             <button class="govuk-button app-home-search-panel__search-button" data-module="govuk-button" type="submit">
               Add location
             </button>
+          </div> -->
+            <form method="post" action="/saved-courses/add-location">
+              <div class="app-home-search-panel__location-row">
+                <input
+                  class="govuk-input app-home-search-panel__location-input"
+                  id="search-by-location"
+                  name="location"
+                  type="text"
+                  autocomplete="postal-code"
+                  value="{{ data.location | default('') }}"
+                />
+                <button
+                  class="govuk-button app-home-search-panel__search-button"
+                  data-module="govuk-button"
+                  type="submit"
+                >
+                  Add location
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
