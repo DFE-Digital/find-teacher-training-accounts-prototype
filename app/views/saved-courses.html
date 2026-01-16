@@ -30,8 +30,6 @@
     </div>
     {% endif %}
 
-    {% include "_includes/my-courses/sub-nav.html" %}
-
     <h2 class="govuk-heading-l app-heading-l">Saved courses</h2>
 
 <div class="saved-courses-search-bg">
@@ -52,7 +50,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
     {% if data.savedCourses and data.savedCourses.length %}
@@ -67,5 +64,7 @@
 
   </div>
 </div>
+
+  {% include "_includes/my-courses/apply-callout.html" %}
 
 {% endblock %}

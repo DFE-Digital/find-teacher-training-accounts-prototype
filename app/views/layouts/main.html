@@ -108,9 +108,27 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
           <li class="govuk-service-navigation__item{% if activePrimaryNav == 'my' %} govuk-service-navigation__item--active{% endif %}">
             <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="saved-courses">
               {% if activePrimaryNav == 'my' %}
-              <strong class="govuk-service-navigation__active-fallback">My courses</strong>
+              <strong class="govuk-service-navigation__active-fallback">Saved courses</strong>
               {% else %}
-              My courses
+              Saved courses
+              {% endif %}
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item{% if activePrimaryNav == 'search' %} govuk-service-navigation__item--active{% endif %}">
+            <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="recent-searches">
+              {% if activePrimaryNav == 'search' %}
+              <strong class="govuk-service-navigation__active-fallback">Recent searches</strong>
+              {% else %}
+              Recent searches
+              {% endif %}
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item{% if activePrimaryNav == 'alert' %} govuk-service-navigation__item--active{% endif %}">
+            <a class="govuk-service-navigation__link govuk-!-font-weight-bold" href="email-alerts">
+              {% if activePrimaryNav == 'alert' %}
+              <strong class="govuk-service-navigation__active-fallback">Email alerts</strong>
+              {% else %}
+              Email alerts
               {% endif %}
             </a>
           </li>
