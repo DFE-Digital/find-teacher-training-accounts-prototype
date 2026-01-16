@@ -1640,3 +1640,21 @@ justify-content: space-between;
  text-align: left;
  justify-content: left;
 }
+
+.applications-apply-bg {
+  background-color: #f3f2f1;
+  border-left: 5px solid 	#1d70b8;
+  padding: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding: 20px;
+}
+}
+
+.support-git-bg {
+  background-color: #f3f2f1;
+  border-left: 5px solid 	#d53880;
+  padding: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding: 20px;
+}
+}

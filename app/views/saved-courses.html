@@ -7,8 +7,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% include "_includes/my-courses/apply-callout.html" %}
-
     {% if noteFlash %}
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="note-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -52,7 +50,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
     {% if data.savedCourses and data.savedCourses.length %}
@@ -67,5 +64,7 @@
 
   </div>
 </div>
+
+  {% include "_includes/my-courses/apply-callout.html" %}
 
 {% endblock %}
