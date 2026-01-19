@@ -26,6 +26,34 @@ router.use((req, res, next) => {
   next()
 })
 
+// Handle Add location submission
+router.post('/saved-courses/add-location', (req, res) => {
+  const { location } = req.body || {}
+
+  if (location && location.trim()) {
+    const place = location.trim()
+    req.session.data.location = place
+
+    const saved = req.session.data.savedCourses || []
+
+    saved.forEach(course => {
+      // If the course already has a distance string like "3 miles from Leeds"
+      if (course.distance && !course.distanceValue) {
+        // Split "3 miles from Leeds"
+        const parts = course.distance.split(' from ')
+        course.distanceValue = parts[0] // "3 miles"
+      }
+
+      // Always override the place
+      course.distancePlace = place
+    })
+
+    req.session.data.savedCourses = saved
+  }
+
+  return res.redirect('/saved-courses')
+})
+
 // Handle Add note submission
 router.post('/add-note', (req, res) => {
   const { courseIndex, courseId, noteText } = req.body || {}
@@ -76,6 +104,7 @@ router.get('/saved-courses', (req, res) => {
   if (req.session?.data?.noteFlash) {
     delete req.session.data.noteFlash
   }
+
   return res.render('saved-courses', { noteFlash: flash })
 })
 

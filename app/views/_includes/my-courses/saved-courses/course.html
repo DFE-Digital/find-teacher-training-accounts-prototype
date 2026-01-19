@@ -31,10 +31,12 @@
           Nearest placement school
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if course.distanceValue or course.distancePlace %}
-          <strong>{{ course.distanceValue }}</strong> from <strong>{{ course.distancePlace }}</strong>
+          {% if data.location %}
+            <strong>{{ course.distanceValue }}</strong> from <strong>{{ data.location }}</strong>
           {% else %}
-          {{ course.distance | boldDistance | safe }}
+            <span class="govuk-hint govuk-!-font-size-16">
+              Add a location to see the nearest placement school
+            </span>
           {% endif %}
         </dd>
       </div>
