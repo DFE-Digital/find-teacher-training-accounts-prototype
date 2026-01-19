@@ -1240,7 +1240,10 @@ justify-content: space-between;
 .app-home-search-location {
 
   @include govuk-media-query($from: tablet) {
-    width: 57%;
+    width: 100%;
+  }
+  @include govuk-media-query($from: desktop) {
+    width: 65%;
   }
 }
 
