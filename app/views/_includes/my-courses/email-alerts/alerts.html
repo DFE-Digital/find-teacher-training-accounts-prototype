@@ -1,9 +1,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body"><a class="govuk-link" href="index">Search for a course</a> to set up an email alert for similar courses.</p>
     <p class="govuk-body app-body">We'll email you weekly when new courses are added that meet these criteria.
 You can unsubscribe any time.</p>
+    <p class="govuk-body"><a class="govuk-link" href="index">Search for a course</a> to set up an email alert for similar courses.</p>
     {% if data.emailAlerts and data.emailAlerts.length %}
       {% for alert in data.emailAlerts %}
         {% set alertIndex = loop.index0 %}
