@@ -8,6 +8,7 @@ You can unsubscribe any time.</p>
       {% for alert in data.emailAlerts %}
         {% set alertIndex = loop.index0 %}
         {% include "_includes/my-courses/email-alerts/alert.html" %}
+        {% include "_includes/my-courses/email-alerts/alerts-none.html" %}
       {% endfor %}
     {% else %}
       {% include "_includes/my-courses/email-alerts/alerts-none.html" %}
